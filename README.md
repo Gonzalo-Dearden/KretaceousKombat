@@ -9,3 +9,10 @@ Fight against rivals such as
 * Rex Mysterio
 
 Buy cabbages, cards and armour from the local Tescos!
+
+Design requirements:
+- Style: RPG
+- Goal: Money
+- Setting: Desert
+- Mechanic: Rock-Paper-Scissors
+- Wildcard: With Dinosaurs
