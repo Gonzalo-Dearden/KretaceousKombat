@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum DamageType {Hit, Block, Grab};
+public enum DamageType {Hit, Block, Grab, All, None};
 //hit < block < grab < hit
 public class Battle : MonoBehaviour
 {
@@ -22,8 +22,9 @@ public class Battle : MonoBehaviour
     [Space]
     public DamageType[] EnemyCards;
 
-    //[Space]
-    //public DamageType PlayerCard;
+    [Space]
+    public int PlayerDamage = 5;
+    public int EnemyDamage = 5;
 
     void Start()
     {
@@ -47,10 +48,10 @@ public class Battle : MonoBehaviour
                         //no winner
                         break;
                     case DamageType.Block:
-                        EnemyHealth -= 5;
+                        EnemyHealth -= PlayerDamage;
                         break;
                     case DamageType.Grab:
-                        PlayerHealth -= 5;
+                        PlayerHealth -= EnemyDamage;
                         break;
                 }
                 break;
@@ -58,13 +59,13 @@ public class Battle : MonoBehaviour
                 switch (PlayerCard)
                 {
                     case DamageType.Hit:
-                        PlayerHealth -= 5;
+                        PlayerHealth -= EnemyDamage;
                         break;
                     case DamageType.Block:
                         //no win
                         break;
                     case DamageType.Grab:
-                        EnemyHealth -= 5;
+                        EnemyHealth -= PlayerDamage;
                         break;
                 }
                 break;
@@ -72,10 +73,10 @@ public class Battle : MonoBehaviour
                 switch (PlayerCard)
                 {
                     case DamageType.Hit:
-                        EnemyHealth -= 5;
+                        EnemyHealth -= PlayerDamage;
                         break;
                     case DamageType.Block:
-                        PlayerHealth -= 5;
+                        PlayerHealth -= EnemyDamage;
                         break;
                     case DamageType.Grab:
                         //no win
