@@ -16,3 +16,5 @@ Design requirements:
 - Setting: Desert
 - Mechanic: Rock-Paper-Scissors
 - Wildcard: With Dinosaurs
+
+Scrum board here: https://trello.com/b/Apa1BkSO/gamejam-team-9
