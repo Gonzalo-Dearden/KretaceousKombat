@@ -19,21 +19,6 @@ public class CardManager : MonoBehaviour
     [Space]
     public Canvas canvas;
 
-    /*
-     * To show cards:
-     * Instantiate card from prefab
-     * Add card to hand
-     * Set card transform to that of a card anchor
-     * Modify card button event handlers
-     * Set active card when clicked
-     * 
-     * 
-     */
-
-    public void GenerateDeck()
-    {
-    }
-
     public void ShuffleDeck()
     {
         for (int i = 0; i < Deck.Length; i++)

@@ -8,10 +8,4 @@ public class Slash : Card
     {
         GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().EnemyHealth -= 10;
     }
-
-    public override void Start()
-    {
-        damageType = DamageType.All;
-        Description = "Always applies 10 damage to the enemy";
-    }
 }

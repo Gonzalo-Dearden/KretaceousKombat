@@ -9,8 +9,12 @@ public abstract class Card : MonoBehaviour
     public string Description;
     public Sprite DisplayImage;
 
-    public abstract void Start();
     public abstract void ApplyEffect();
+
+    public void Start()
+    {
+        GetComponent<Button>().image.sprite = DisplayImage;
+    }
 
     public void Choose()
     {
