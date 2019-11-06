@@ -9,22 +9,35 @@ public class Battle : MonoBehaviour
 {
     public GameObject enemy;
 
-    [Space]
+    [Header("Health bars")]
     public Slider PlayerHealthBar;
     public Slider EnemyHealthBar;
 
-    [Space]
-    public int PlayerHealth;
+    [Header("Maximum healths")]
+    private int PlayerHealth;
     public int MaxPlayerHealth;
-    public int EnemyHealth;
+    private int EnemyHealth;
     public int MaxEnemyHealth;
 
-    [Space]
+    [Header("Enemy Cards")]
     public DamageType[] EnemyCards;
 
-    [Space]
+    [Header("Base damage levels")]
     public int PlayerDamage = 5;
     public int EnemyDamage = 5;
+
+    [Header("UI Buttons for attack modes")]
+    public Button HitButton;
+    public Button GrabButton;
+    public Button BlockButton;
+
+    [Space]
+    public Button ProceedButton;
+
+
+    public DamageType nextPlayerDamageType;
+    public DamageType nextEnemyDamageType;
+
 
     void Start()
     {
@@ -32,14 +45,16 @@ public class Battle : MonoBehaviour
         EnemyHealth = MaxEnemyHealth;
         PlayerHealthBar.value = PlayerHealth / MaxPlayerHealth;
         EnemyHealthBar.value = EnemyHealth / MaxEnemyHealth;
+
+        nextEnemyDamageType = EnemyCards[Random.Range(0, EnemyCards.Length)];
     }
 
     public void Turn(DamageType PlayerCard)
     {
         //enemy chooses card
-        DamageType enemyCard = EnemyCards[Random.Range(0, EnemyCards.Length)];
+        
 
-        switch (enemyCard)
+        switch (nextEnemyDamageType)
         {
             case DamageType.Hit:
                 switch (PlayerCard)
@@ -97,22 +112,51 @@ public class Battle : MonoBehaviour
         PlayerHealthBar.value = (float)PlayerHealth / MaxPlayerHealth;
         EnemyHealthBar.value = (float)EnemyHealth / MaxEnemyHealth;
 
-        
+        HitButton.interactable = true;
+        BlockButton.interactable = true;
+        GrabButton.interactable = true;
+
+        ProceedButton.interactable = false;
+
+        nextEnemyDamageType = EnemyCards[Random.Range(0, EnemyCards.Length)];
 
     }
 
     public void Hit()
     {
-        Turn(DamageType.Hit);
+        nextPlayerDamageType = DamageType.Hit;
+
+        HitButton.interactable = false;
+        BlockButton.interactable = true;
+        GrabButton.interactable = true;
+
+        ProceedButton.interactable = true;
     }
 
     public void Block()
     {
-        Turn(DamageType.Block);
+        nextPlayerDamageType = DamageType.Block;
+
+        HitButton.interactable = true;
+        BlockButton.interactable = false;
+        GrabButton.interactable = true;
+
+        ProceedButton.interactable = true;
     }
 
     public void Grab()
     {
-        Turn(DamageType.Grab);
+        nextPlayerDamageType = DamageType.Grab;
+
+        HitButton.interactable = true;
+        BlockButton.interactable = true;
+        GrabButton.interactable = false;
+
+        ProceedButton.interactable = true;
+    }
+
+    public void CommenceRound()
+    {
+        Turn(nextPlayerDamageType);
     }
 }
