@@ -19,7 +19,7 @@ Design requirements:
 
 Scrum board here: https://trello.com/b/Apa1BkSO/gamejam-team-9
 
-###Adding cards
+### Adding cards
 Adding cards is a somewhat involved process... sorry about that
 
 - Extend the Card class, and add in the features that you wish the card to have (Ask a programm/Matt if you are unsure)
