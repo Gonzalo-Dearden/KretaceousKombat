@@ -14,9 +14,9 @@ public class Battle : MonoBehaviour
     public Slider EnemyHealthBar;
 
     [Header("Maximum healths")]
-    private int PlayerHealth;
+    public int PlayerHealth;
     public int MaxPlayerHealth;
-    private int EnemyHealth;
+    public int EnemyHealth;
     public int MaxEnemyHealth;
 
     [Header("Enemy Cards")]
@@ -34,9 +34,15 @@ public class Battle : MonoBehaviour
     [Space]
     public Button ProceedButton;
 
-
+    [Space]
     public DamageType nextPlayerDamageType;
     public DamageType nextEnemyDamageType;
+
+    [Space]
+    public CardManager cardManager;
+
+    [Space]
+    public Card NextCard;
 
 
     void Start()
@@ -47,11 +53,13 @@ public class Battle : MonoBehaviour
         EnemyHealthBar.value = EnemyHealth / MaxEnemyHealth;
 
         nextEnemyDamageType = EnemyCards[Random.Range(0, EnemyCards.Length)];
+
+        cardManager.ShowCards();
     }
 
     public void Turn(DamageType PlayerCard)
     {
-        //enemy chooses card
+        NextCard.ApplyEffect();
         
 
         switch (nextEnemyDamageType)

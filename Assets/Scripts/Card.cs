@@ -11,4 +11,15 @@ public abstract class Card : MonoBehaviour
 
     public abstract void Start();
     public abstract void ApplyEffect();
+
+    public void Choose()
+    {
+        foreach (Card card in GameObject.FindGameObjectWithTag("CardManager").GetComponent<CardManager>().ShownCards)
+        {
+            card.GetComponent<Button>().interactable = true;
+        }
+
+        GetComponent<Button>().interactable = false;
+        GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().NextCard = this;        
+    }
 }
