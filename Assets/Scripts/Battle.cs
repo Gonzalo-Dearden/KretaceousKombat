@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum DamageType {Hit, Block, Grab, All, None};
-//hit < block < grab < hit
+
+
 public class Battle : MonoBehaviour
 {
     public GameObject enemy;
@@ -20,16 +20,7 @@ public class Battle : MonoBehaviour
     public int MaxEnemyHealth;
 
     [Header("Enemy Cards")]
-    public DamageType[] EnemyCards;
-
-    [Header("Base damage levels")]
-    public int PlayerDamage = 5;
-    public int EnemyDamage = 5;
-
-    [Header("UI Buttons for attack modes")]
-    public Button HitButton;
-    public Button GrabButton;
-    public Button BlockButton;
+    public Card[] EnemyCards;
 
     [Space]
     public Button ProceedButton;
@@ -42,7 +33,8 @@ public class Battle : MonoBehaviour
     public CardManager cardManager;
 
     [Space]
-    public Card NextCard;
+    public Card NextPlayerCard;
+    public Card NextEnemyCard;
 
 
     void Start()
@@ -52,57 +44,59 @@ public class Battle : MonoBehaviour
         PlayerHealthBar.value = PlayerHealth / MaxPlayerHealth;
         EnemyHealthBar.value = EnemyHealth / MaxEnemyHealth;
 
-        nextEnemyDamageType = EnemyCards[Random.Range(0, EnemyCards.Length)];
+        NextEnemyCard = EnemyCards[Random.Range(0, EnemyCards.Length)];
 
         cardManager.ShowCards();
     }
 
     public void Turn(DamageType PlayerCard)
     {
-        NextCard.ApplyEffect();
+
+        nextEnemyDamageType = NextEnemyCard.damageType;
+        nextPlayerDamageType = NextPlayerCard.damageType;
         
 
         switch (nextEnemyDamageType)
         {
             case DamageType.Hit:
-                switch (PlayerCard)
+                switch (nextPlayerDamageType)
                 {
                     case DamageType.Hit:
                         //no winner
                         break;
                     case DamageType.Block:
-                        EnemyHealth -= PlayerDamage;
+                        NextPlayerCard.ApplyEffect(Player.Player);
                         break;
                     case DamageType.Grab:
-                        PlayerHealth -= EnemyDamage;
+                        NextEnemyCard.ApplyEffect(Player.Enemy);
                         break;
                 }
                 break;
             case DamageType.Block:
-                switch (PlayerCard)
+                switch (nextPlayerDamageType)
                 {
                     case DamageType.Hit:
-                        PlayerHealth -= EnemyDamage;
+                        NextEnemyCard.ApplyEffect(Player.Enemy);
                         break;
                     case DamageType.Block:
-                        //no win
+                        //no winner
                         break;
                     case DamageType.Grab:
-                        EnemyHealth -= PlayerDamage;
+                        NextPlayerCard.ApplyEffect(Player.Player);
                         break;
                 }
                 break;
             case DamageType.Grab:
-                switch (PlayerCard)
+                switch (nextPlayerDamageType)
                 {
                     case DamageType.Hit:
-                        EnemyHealth -= PlayerDamage;
+                        NextPlayerCard.ApplyEffect(Player.Player);
                         break;
                     case DamageType.Block:
-                        PlayerHealth -= EnemyDamage;
+                        NextEnemyCard.ApplyEffect(Player.Enemy);
                         break;
                     case DamageType.Grab:
-                        //no win
+                        //no winner
                         break;
                 }
                 break;
@@ -120,53 +114,16 @@ public class Battle : MonoBehaviour
         PlayerHealthBar.value = (float)PlayerHealth / MaxPlayerHealth;
         EnemyHealthBar.value = (float)EnemyHealth / MaxEnemyHealth;
 
-        HitButton.interactable = true;
-        BlockButton.interactable = true;
-        GrabButton.interactable = true;
-
         ProceedButton.interactable = false;
 
-        nextEnemyDamageType = EnemyCards[Random.Range(0, EnemyCards.Length)];
-        NextCard = null;
+        NextEnemyCard = EnemyCards[Random.Range(0, EnemyCards.Length)];
+        NextPlayerCard = null;
 
         foreach (Card card in cardManager.ShownCards)
         {
             card.GetComponent<Button>().interactable = true;
         }
 
-    }
-
-    public void Hit()
-    {
-        nextPlayerDamageType = DamageType.Hit;
-
-        HitButton.interactable = false;
-        BlockButton.interactable = true;
-        GrabButton.interactable = true;
-
-        ProceedButton.interactable = true;
-    }
-
-    public void Block()
-    {
-        nextPlayerDamageType = DamageType.Block;
-
-        HitButton.interactable = true;
-        BlockButton.interactable = false;
-        GrabButton.interactable = true;
-
-        ProceedButton.interactable = true;
-    }
-
-    public void Grab()
-    {
-        nextPlayerDamageType = DamageType.Grab;
-
-        HitButton.interactable = true;
-        BlockButton.interactable = true;
-        GrabButton.interactable = false;
-
-        ProceedButton.interactable = true;
     }
 
     public void CommenceRound()

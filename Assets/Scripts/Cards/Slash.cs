@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Slash : Card
 {
-    public override void ApplyEffect()
+    public override void ApplyEffect(Player player)
     {
-        GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().EnemyHealth -= 10;
+        if(player == Player.Player)
+        {
+            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().EnemyHealth -= 10;
+        }
+        else if (player == Player.Enemy)
+        {
+            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().PlayerHealth -= 10;
+        }
+
     }
 }

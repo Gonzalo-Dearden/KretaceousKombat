@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Player { Player, Enemy};
+
+public enum DamageType { Hit, Block, Grab };
+//hit < block < grab < hit
+
 public abstract class Card : MonoBehaviour
 {
     public DamageType damageType;
     public string Description;
     public Sprite DisplayImage;
 
-    public abstract void ApplyEffect();
+    public abstract void ApplyEffect(Player player);
 
     public void Start()
     {
@@ -24,6 +29,7 @@ public abstract class Card : MonoBehaviour
         }
 
         GetComponent<Button>().interactable = false;
-        GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().NextCard = this;        
+        GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().NextPlayerCard = this;
+        GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().ProceedButton.interactable = true;
     }
 }
