@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CardManager : MonoBehaviour
 {
-    public Card[] Deck;
+    public List<Card> DrawPile;
+    public List<Card> DiscardPile;
+    public List<Card> Hand;
     public int HandSize;
     public List<Card> ShownCards;
 
@@ -21,13 +24,39 @@ public class CardManager : MonoBehaviour
 
     public void ShuffleDeck()
     {
-        for (int i = 0; i < Deck.Length; i++)
+        for (int i = 0; i < DrawPile.Count; i++)
         {
-            int rnd = Random.Range(0, Deck.Length);
-            Card temp = Deck[rnd];
-            Deck[rnd] = Deck[i];
-            Deck[i] = temp;
+            int rnd = Random.Range(0, DrawPile.Count);
+            Card temp = DrawPile[rnd];
+            DrawPile[rnd] = DrawPile[i];
+            DrawPile[i] = temp;
         }
+    }
+
+    public void ResetCards()
+    {
+        DrawPile = AllCards.ToList<Card>();
+        ShuffleDeck();
+    }
+
+    public void Draw()
+    {
+        if (DrawPile.Count < HandSize)
+        {
+            ResetCards();
+        }
+
+        for (int i = 0; i < HandSize; i++)
+        {
+            ShownCards.Add(DrawPile[0]);
+            DrawPile.RemoveAt(0);
+        }
+    }
+
+    public void Clear()
+    {
+        DiscardPile.AddRange(ShownCards);
+        ShownCards.Clear();
     }
 
     public void ShowCards()
@@ -39,7 +68,7 @@ public class CardManager : MonoBehaviour
 
         for (int i = 0; i < HandSize; i++)
         {
-            Card card = Instantiate(Deck[i], Vector3.zero, Quaternion.identity, canvas.transform);
+            Card card = Instantiate(DrawPile[i], Vector3.zero, Quaternion.identity, canvas.transform);
             card.GetComponent<RectTransform>().position = CardPositions[i].GetComponent<RectTransform>().position;
             card.GetComponent<Button>().onClick.AddListener(card.Choose);
             ShownCards.Add(card);
