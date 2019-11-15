@@ -36,6 +36,10 @@ public class Battle : MonoBehaviour
     public Card NextPlayerCard;
     public Card NextEnemyCard;
 
+    [Header("Endgame Overlays")]
+    public GameObject WonOverlay;
+    public GameObject LossOverlay;
+
 
     void Start()
     {
@@ -105,11 +109,11 @@ public class Battle : MonoBehaviour
 
         if (PlayerHealth <= 0)
         {
-            Debug.Log("Player whited out!");
+            LossOverlay.SetActive(true);
         }
         if (EnemyHealth <= 0)
         {
-            Debug.Log("You won!");
+            WonOverlay.SetActive(true);
         }
 
         PlayerHealthBar.value = (float)PlayerHealth / MaxPlayerHealth;
