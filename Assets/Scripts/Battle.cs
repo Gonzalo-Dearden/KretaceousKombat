@@ -46,6 +46,7 @@ public class Battle : MonoBehaviour
 
         NextEnemyCard = EnemyCards[Random.Range(0, EnemyCards.Length)];
 
+        cardManager.ResetCards();
         cardManager.ShowCards();
     }
 
