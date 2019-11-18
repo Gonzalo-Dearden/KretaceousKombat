@@ -40,7 +40,6 @@ public class CardManager : MonoBehaviour
 
     public void ShowCards()
     {
-        print("Showing Cards");
 
         foreach (Card card in ShownCards)
         {
