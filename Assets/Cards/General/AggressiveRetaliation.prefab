@@ -65,26 +65,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
-        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 118
       objectReference: {fileID: 0}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 628643972126616906}
   - component: {fileID: 628643972126616907}
   - component: {fileID: 628643972126616900}
-  - component: {fileID: 628643972126616901}
   m_Layer: 5
   m_Name: Slash
   m_TagString: Untagged
@@ -27,17 +26,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628643972126616903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0189273, y: 2.0189273, z: 2.0189273}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118, y: -198.36}
-  m_SizeDelta: {x: 72, y: 101.9}
+  m_AnchoredPosition: {x: 234.2, y: -158}
+  m_SizeDelta: {x: 138.4, y: 195.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &628643972126616906
 CanvasRenderer:
@@ -118,19 +117,3 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &628643972126616901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628643972126616903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e00a259cdea7d4481ac807856a96d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageType: 0
-  Description: Does 10 damage against the player this card is played on
-  Title: Slash
-  DisplayImage: {fileID: 21300000, guid: 0b900f23e13c3834aafe0d0f0b60fc25, type: 3}
