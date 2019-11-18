@@ -124,6 +124,8 @@ public class Battle : MonoBehaviour
         NextEnemyCard = EnemyCards[Random.Range(0, EnemyCards.Length)];
         NextPlayerCard = null;
 
+        cardManager.ShowCards();
+
         foreach (Card card in cardManager.ShownCards)
         {
             card.GetComponent<Button>().interactable = true;

@@ -7,9 +7,8 @@ using System.Linq;
 public class CardManager : MonoBehaviour
 {
     public List<Card> DrawPile;
-    public List<Card> DiscardPile;
-    public List<Card> Hand;
     public int HandSize;
+
     public List<Card> ShownCards;
 
     [Space]
@@ -39,31 +38,20 @@ public class CardManager : MonoBehaviour
         ShuffleDeck();
     }
 
-    public void Draw()
-    {
-        if (DrawPile.Count < HandSize)
-        {
-            ResetCards();
-        }
-
-        for (int i = 0; i < HandSize; i++)
-        {
-            ShownCards.Add(DrawPile[0]);
-            DrawPile.RemoveAt(0);
-        }
-    }
-
-    public void Clear()
-    {
-        DiscardPile.AddRange(ShownCards);
-        ShownCards.Clear();
-    }
-
     public void ShowCards()
     {
+        print("Showing Cards");
+
         foreach (Card card in ShownCards)
         {
             Destroy(card.gameObject);
+        }
+
+        ShownCards.Clear();
+
+        if (DrawPile.Count < HandSize)
+        {
+            ResetCards();
         }
 
         for (int i = 0; i < HandSize; i++)
@@ -72,6 +60,12 @@ public class CardManager : MonoBehaviour
             card.GetComponent<RectTransform>().position = CardPositions[i].GetComponent<RectTransform>().position;
             card.GetComponent<Button>().onClick.AddListener(card.Choose);
             ShownCards.Add(card);
+            
+        }
+
+        for (int i = 0; i < HandSize; i++)
+        {
+            DrawPile.RemoveAt(0);
         }
 
     }

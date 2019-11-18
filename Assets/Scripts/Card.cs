@@ -12,6 +12,7 @@ public abstract class Card : MonoBehaviour
 {
     public DamageType damageType;
     public string Description;
+    public string Title;
     public Sprite DisplayImage;
 
     public abstract void ApplyEffect(Player player);

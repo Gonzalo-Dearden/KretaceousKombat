@@ -132,4 +132,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageType: 0
   Description: Does 10 damage against the player this card is played on
+  Title: Slash
   DisplayImage: {fileID: 21300000, guid: 0b900f23e13c3834aafe0d0f0b60fc25, type: 3}
