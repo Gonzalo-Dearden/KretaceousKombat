@@ -14,6 +14,7 @@ public abstract class Card : MonoBehaviour
     public string Description;
     public string Title;
     public Sprite DisplayImage;
+    public int MonetaryValue;
 
     public abstract void ApplyEffect(Player player);
 

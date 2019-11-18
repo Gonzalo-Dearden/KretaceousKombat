@@ -16,6 +16,7 @@ MonoBehaviour:
   Description: Heals 5 health
   Title: Passive
   DisplayImage: {fileID: 0}
+  MonetaryValue: 10
 --- !u!1001 &4525452494029536239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,11 +24,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 628643972126616903, guid: 6726848513bcbbb4eaf6940f3182b4cb,
-        type: 3}
-      propertyPath: m_Name
-      value: Passive
-      objectReference: {fileID: 0}
     - target: {fileID: 628643972126616902, guid: 6726848513bcbbb4eaf6940f3182b4cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,6 +128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 628643972126616903, guid: 6726848513bcbbb4eaf6940f3182b4cb,
+        type: 3}
+      propertyPath: m_Name
+      value: Passive
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 628643972126616901, guid: 6726848513bcbbb4eaf6940f3182b4cb, type: 3}

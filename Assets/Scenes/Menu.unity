@@ -584,8 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8a397b3d490874a8323240344a9e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossOrder: 00000000
-  CurrentBoss: 0
+  BossOrder: 000000000100000002000000
+  CurrentBoss: 1
   VinnieCards:
   - {fileID: 3050237292340583305, guid: 279431565280eef40a674d1af18f2022, type: 3}
   - {fileID: 886713190908056751, guid: 812f76827fc3b57468f04eb9ee0ffcb7, type: 3}
