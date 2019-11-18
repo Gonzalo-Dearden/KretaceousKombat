@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Bosses {Vinnie, Rex, BlockNess}
 public class GlobalGameManager : MonoBehaviour
 {
     [Header("Boss Order")]
     [Tooltip("Each boss should be placed into this list, in order. When all bosses have been fought, the game is won")]
     //boss order
-    public List<string> BossOrder;
+    public List<Bosses> BossOrder;
     public int CurrentBoss;
 
     [Header("Boss Cards")]
     //boss cards
-    public List<Card> VinnieCards;
-    public List<Card> RexCards;
-    public List<Card> BlockNessCards;
+    public Card[] VinnieCards;
+    public Card[] RexCards;
+    public Card[] BlockNessCards;
 
     [Header("Global Hand")]
     [Tooltip("This is the hand that is loaded for the player at the start of every match")]

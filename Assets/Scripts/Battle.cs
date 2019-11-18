@@ -51,7 +51,18 @@ public class Battle : MonoBehaviour
             Debug.LogError("Global game manager not found. This game needs to be started from the \"Menu\" scene to work properly");
         }
 
-
+        switch (manager.BossOrder[manager.CurrentBoss])
+        {
+            case Bosses.Vinnie:
+                EnemyCards = manager.VinnieCards;
+                break;
+            case Bosses.Rex:
+                EnemyCards = manager.RexCards;
+                break;
+            case Bosses.BlockNess:
+                EnemyCards = manager.BlockNessCards;
+                break;
+        }
 
         PlayerHealth = MaxPlayerHealth;
         EnemyHealth = MaxEnemyHealth;
