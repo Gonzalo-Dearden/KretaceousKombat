@@ -364,16 +364,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrawPile: []
-  DiscardPile: []
-  Hand: []
   HandSize: 2
   ShownCards: []
   CardPositions:
   - {fileID: 1675468984}
   - {fileID: 527414615}
   AllCards:
-  - {fileID: 628643972126616901, guid: 6726848513bcbbb4eaf6940f3182b4cb, type: 3}
-  - {fileID: 203868630776170373, guid: 811a3afa72d8f864697620f7cadd474d, type: 3}
+  - {fileID: 3050237292340583305, guid: 279431565280eef40a674d1af18f2022, type: 3}
+  - {fileID: 886713190908056751, guid: 812f76827fc3b57468f04eb9ee0ffcb7, type: 3}
+  - {fileID: 8255768814078842843, guid: e143714133b46d14e9e7a2cbed2119f8, type: 3}
+  - {fileID: 43820001073241366, guid: ce6e3f2bee421c44ab6f14a970e4a1ed, type: 3}
+  - {fileID: 6950848787432980037, guid: 622067e559966df4fbfd7277923ea62d, type: 3}
+  - {fileID: 6950848787432980037, guid: 622067e559966df4fbfd7277923ea62d, type: 3}
   canvas: {fileID: 1102174080}
 --- !u!4 &315863315
 Transform:
@@ -1044,8 +1046,8 @@ MonoBehaviour:
   EnemyHealth: 0
   MaxEnemyHealth: 100
   EnemyCards:
-  - {fileID: 628643972126616901, guid: 6726848513bcbbb4eaf6940f3182b4cb, type: 3}
-  - {fileID: 203868630776170373, guid: 811a3afa72d8f864697620f7cadd474d, type: 3}
+  - {fileID: 886713190908056751, guid: 812f76827fc3b57468f04eb9ee0ffcb7, type: 3}
+  - {fileID: 8255768814078842843, guid: e143714133b46d14e9e7a2cbed2119f8, type: 3}
   ProceedButton: {fileID: 853614615}
   nextPlayerDamageType: 0
   nextEnemyDamageType: 0
