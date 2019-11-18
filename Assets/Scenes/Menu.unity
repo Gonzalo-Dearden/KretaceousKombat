@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 237450171}
   m_Layer: 0
   m_Name: GlobalGameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,6 +460,10 @@ MonoBehaviour:
   VinnieCards: []
   RexCards: []
   BlockNessCards: []
+  GlobalHand: []
+  money: 0
+  health: 0
+  cabbages: 0
 --- !u!4 &237450172
 Transform:
   m_ObjectHideFlags: 0

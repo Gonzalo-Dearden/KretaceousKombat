@@ -40,9 +40,19 @@ public class Battle : MonoBehaviour
     public GameObject WonOverlay;
     public GameObject LossOverlay;
 
+    private GlobalGameManager manager;
+
 
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>();
+        if (manager == null)
+        {
+            Debug.LogError("Global game manager not found. This game needs to be started from the \"Menu\" scene to work properly");
+        }
+
+
+
         PlayerHealth = MaxPlayerHealth;
         EnemyHealth = MaxEnemyHealth;
         PlayerHealthBar.value = PlayerHealth / MaxPlayerHealth;
