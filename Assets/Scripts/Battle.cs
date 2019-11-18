@@ -64,6 +64,8 @@ public class Battle : MonoBehaviour
                 break;
         }
 
+        cardManager.AllCards = manager.GlobalHand.ToArray();
+
         PlayerHealth = MaxPlayerHealth;
         EnemyHealth = MaxEnemyHealth;
         PlayerHealthBar.value = PlayerHealth / MaxPlayerHealth;
