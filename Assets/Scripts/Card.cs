@@ -23,6 +23,7 @@ public abstract class Card : MonoBehaviour
     public void Start()
     {
         GetComponent<Button>().image.sprite = DisplayImage;
+
         EventTrigger trigger = GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerEnter;

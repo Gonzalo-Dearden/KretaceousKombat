@@ -33,4 +33,12 @@ public class GlobalGameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }
