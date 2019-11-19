@@ -592,6 +592,8 @@ MonoBehaviour:
   - {fileID: 8255768814078842843, guid: e143714133b46d14e9e7a2cbed2119f8, type: 3}
   - {fileID: 43820001073241366, guid: ce6e3f2bee421c44ab6f14a970e4a1ed, type: 3}
   - {fileID: 6950848787432980037, guid: 622067e559966df4fbfd7277923ea62d, type: 3}
+  - {fileID: 7069194632986801382, guid: 9e9107aece4853542b31cb0c163a3d92, type: 3}
+  - {fileID: 6986491214440298070, guid: 03295d957cc65d54ea8023730a4c2615, type: 3}
   RexCards:
   - {fileID: 3050237292340583305, guid: 279431565280eef40a674d1af18f2022, type: 3}
   - {fileID: 886713190908056751, guid: 812f76827fc3b57468f04eb9ee0ffcb7, type: 3}
@@ -610,6 +612,7 @@ MonoBehaviour:
   - {fileID: 8255768814078842843, guid: e143714133b46d14e9e7a2cbed2119f8, type: 3}
   - {fileID: 43820001073241366, guid: ce6e3f2bee421c44ab6f14a970e4a1ed, type: 3}
   - {fileID: 6950848787432980037, guid: 622067e559966df4fbfd7277923ea62d, type: 3}
+  - {fileID: 6984214591289355829, guid: 5f874afc257787e47b02b1d2da477fe2, type: 3}
   money: 10
   health: 0
   cabbages: 0

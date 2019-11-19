@@ -8,11 +8,11 @@ public class Passive : Card
     {
         if (player == Player.Player)
         {
-            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().EnemyHealth += 5;
+            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().PlayerHealth += 5;
         }
         else if (player == Player.Enemy)
         {
-            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().PlayerHealth += 5;
+            GameObject.FindGameObjectWithTag("BattleManager").GetComponent<Battle>().EnemyHealth += 5;
         }
     }
 }
