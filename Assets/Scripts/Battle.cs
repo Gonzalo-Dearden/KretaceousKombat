@@ -45,6 +45,11 @@ public class Battle : MonoBehaviour
     public int TauntLength;
     public TextMeshProUGUI tauntText;
 
+    [Header("Boss Images")]
+    public Image RexImage;
+    public Image BlockNessImage;
+    public Image VinnieImage;
+
     private GlobalGameManager manager;
 
 
@@ -60,12 +65,15 @@ public class Battle : MonoBehaviour
         {
             case Bosses.Vinnie:
                 EnemyCards = manager.VinnieCards;
+                VinnieImage.gameObject.SetActive(true);
                 break;
             case Bosses.Rex:
                 EnemyCards = manager.RexCards;
+                RexImage.gameObject.SetActive(true);
                 break;
             case Bosses.BlockNess:
                 EnemyCards = manager.BlockNessCards;
+                BlockNessImage.gameObject.SetActive(true);
                 break;
         }
 
