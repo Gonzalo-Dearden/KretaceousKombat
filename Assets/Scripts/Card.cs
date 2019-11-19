@@ -58,7 +58,6 @@ public abstract class Card : MonoBehaviour
     {
         transform.localScale = new Vector3(4, 4, 4);
         transform.SetAsLastSibling();
-        Debug.Log(transform.position);
     }
 
     public void MouseOff()

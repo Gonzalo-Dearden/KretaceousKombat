@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -39,6 +40,10 @@ public class Battle : MonoBehaviour
     [Header("Endgame Overlays")]
     public GameObject WonOverlay;
     public GameObject LossOverlay;
+
+    [Header("Boss Taunts")]
+    public int TauntLength;
+    public TextMeshProUGUI tauntText;
 
     private GlobalGameManager manager;
 
@@ -154,10 +159,31 @@ public class Battle : MonoBehaviour
             card.GetComponent<Button>().interactable = true;
         }
 
+        switch (manager.BossOrder[manager.CurrentBoss])
+        {
+            case Bosses.Vinnie:
+                StartCoroutine(ShowTaunt(manager.VinnieTaunts[Random.Range(0, manager.VinnieTaunts.Length-1)]));
+                break;
+            case Bosses.Rex:
+                StartCoroutine(ShowTaunt(manager.RexTaunts[Random.Range(0, manager.RexTaunts.Length-1)]));
+                break;
+            case Bosses.BlockNess:
+                StartCoroutine(ShowTaunt(manager.BlockNessTaunts[Random.Range(0, manager.BlockNessTaunts.Length-1)]));
+                break;
+        }
+
     }
 
     public void CommenceRound()
     {
         Turn(nextPlayerDamageType);
+    }
+
+    IEnumerator ShowTaunt(string Taunt)
+    {
+        tauntText.text = Taunt;
+        tauntText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(TauntLength);
+        tauntText.gameObject.SetActive(false);
     }
 }

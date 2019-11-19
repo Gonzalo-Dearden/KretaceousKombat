@@ -29,6 +29,12 @@ public class GlobalGameManager : MonoBehaviour
     public int health;
     //cabbages
     public int cabbages;
+
+    [Header("Taunts")]
+    [Tooltip("Lists of taunts for each of the bosses")]
+    public string[] VinnieTaunts;
+    public string[] RexTaunts;
+    public string[] BlockNessTaunts;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
