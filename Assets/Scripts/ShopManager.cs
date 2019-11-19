@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ShopManager : MonoBehaviour
     // Start is called before the first frame update
 
     public Card[] AvailableCards;
+
+    public TextMeshProUGUI MoneyText;
+
+    
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>();
@@ -65,5 +70,10 @@ public class ShopManager : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene("Hub");
+    }
+
+    public void Update()
+    {
+        MoneyText.text = "Money: " + manager.money + " gold";
     }
 }

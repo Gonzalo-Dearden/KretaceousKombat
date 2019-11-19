@@ -36,8 +36,11 @@ public class ShopCard : MonoBehaviour
 
     public void Buy()
     {
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().GlobalHand.Add(CardStorage);
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().money -= CardStorage.MonetaryValue;
-        gameObject.GetComponent<Button>().interactable = false;
+        if (GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().money >= CardStorage.MonetaryValue)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().GlobalHand.Add(CardStorage);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().money -= CardStorage.MonetaryValue;
+            gameObject.GetComponent<Button>().interactable = false;
+        }
     }
 }
