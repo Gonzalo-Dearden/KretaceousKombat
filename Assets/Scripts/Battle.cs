@@ -50,7 +50,7 @@ public class Battle : MonoBehaviour
 
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>();
+        manager = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<GlobalGameManager>();
         if (manager == null)
         {
             Debug.LogError("Global game manager not found. This game needs to be started from the \"Menu\" scene to work properly");
@@ -159,6 +159,7 @@ public class Battle : MonoBehaviour
             card.GetComponent<Button>().interactable = true;
         }
 
+        StopAllCoroutines();
         switch (manager.BossOrder[manager.CurrentBoss])
         {
             case Bosses.Vinnie:
