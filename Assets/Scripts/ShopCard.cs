@@ -30,8 +30,6 @@ public class ShopCard : MonoBehaviour
             case DamageType.Grab:
                 PaperImage.gameObject.SetActive(true);
                 break;
-            default:
-                break;
         }
 
     }

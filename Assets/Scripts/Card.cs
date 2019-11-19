@@ -18,6 +18,8 @@ public abstract class Card : MonoBehaviour
     public Sprite DisplayImage;
     public int MonetaryValue;
 
+
+
     public abstract void ApplyEffect(Player player);
 
     public void Start()
@@ -36,6 +38,8 @@ public abstract class Card : MonoBehaviour
         trigger.triggers.Add(exit);
 
         GetComponentInChildren<TextMeshProUGUI>().text = Title + "\n" + Description;
+
+        
     }
 
     public void Choose()
