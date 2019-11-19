@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -146,10 +147,12 @@ public class Battle : MonoBehaviour
         if (PlayerHealth <= 0)
         {
             LossOverlay.SetActive(true);
+            Lose();
         }
         if (EnemyHealth <= 0)
         {
             WonOverlay.SetActive(true);
+            Win();
         }
 
         PlayerHealthBar.value = (float)PlayerHealth / MaxPlayerHealth;
@@ -185,12 +188,15 @@ public class Battle : MonoBehaviour
 
     public void Win()
     {
+        manager.money += 20;
+        manager.CurrentBoss += 1;
+        SceneManager.LoadScene("Hub");
 
     }
 
     public void Lose()
     {
-
+        SceneManager.LoadScene("Hub");
     }
 
     public void CommenceRound()
@@ -207,4 +213,4 @@ public class Battle : MonoBehaviour
     }
 }
 
-//#7582♥
+//#7582 happy birthday! ♥
