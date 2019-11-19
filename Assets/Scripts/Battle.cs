@@ -183,6 +183,16 @@ public class Battle : MonoBehaviour
 
     }
 
+    public void Win()
+    {
+
+    }
+
+    public void Lose()
+    {
+
+    }
+
     public void CommenceRound()
     {
         Turn(nextPlayerDamageType);
@@ -196,3 +206,5 @@ public class Battle : MonoBehaviour
         tauntText.gameObject.SetActive(false);
     }
 }
+
+//#7582♥
