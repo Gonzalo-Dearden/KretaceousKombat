@@ -39,6 +39,8 @@ public abstract class Card : MonoBehaviour
 
         GetComponentInChildren<TextMeshProUGUI>().text = Title + "\n" + Description;
 
+        MouseOff();
+
         
     }
 
