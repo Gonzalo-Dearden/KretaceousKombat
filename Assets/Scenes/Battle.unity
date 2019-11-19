@@ -1197,9 +1197,9 @@ MonoBehaviour:
   PlayerHealthBar: {fileID: 600757742}
   EnemyHealthBar: {fileID: 416064169}
   PlayerHealth: 0
-  MaxPlayerHealth: 100
+  MaxPlayerHealth: 30
   EnemyHealth: 0
-  MaxEnemyHealth: 100
+  MaxEnemyHealth: 30
   EnemyCards:
   - {fileID: 886713190908056751, guid: 812f76827fc3b57468f04eb9ee0ffcb7, type: 3}
   - {fileID: 8255768814078842843, guid: e143714133b46d14e9e7a2cbed2119f8, type: 3}
