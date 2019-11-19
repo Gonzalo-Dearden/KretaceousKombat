@@ -144,15 +144,17 @@ public class Battle : MonoBehaviour
                 break;
         }
 
+        StopAllCoroutines();
+
         if (PlayerHealth <= 0)
         {
             LossOverlay.SetActive(true);
-            Lose();
+            StartCoroutine(Lose());
         }
         if (EnemyHealth <= 0)
         {
             WonOverlay.SetActive(true);
-            Win();
+            StartCoroutine(Win());
         }
 
         PlayerHealthBar.value = (float)PlayerHealth / MaxPlayerHealth;
@@ -170,7 +172,7 @@ public class Battle : MonoBehaviour
             card.GetComponent<Button>().interactable = true;
         }
 
-        StopAllCoroutines();
+        
         switch (manager.BossOrder[manager.CurrentBoss])
         {
             case Bosses.Vinnie:
@@ -186,17 +188,25 @@ public class Battle : MonoBehaviour
 
     }
 
-    public void Win()
+    IEnumerator Win()
     {
         manager.money += 20;
         manager.CurrentBoss += 1;
-        SceneManager.LoadScene("Hub");
+        WonOverlay.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Debug.Log("Loading hub");
+        SceneManager.LoadScene("Hub", LoadSceneMode.Single);
+        Debug.Log("Loaded hub");
 
     }
 
-    public void Lose()
+    IEnumerator Lose()
     {
-        SceneManager.LoadScene("Hub");
+        LossOverlay.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Debug.Log("Loading hub");
+        SceneManager.LoadScene("Hub", LoadSceneMode.Single);
+        Debug.Log("Loaded hub");
     }
 
     public void CommenceRound()

@@ -614,9 +614,22 @@ MonoBehaviour:
   health: 0
   cabbages: 0
   VinnieTaunts:
-  - Is that all you got?
-  RexTaunts: []
-  BlockNessTaunts: []
+  - "For you this will be a hassle, for me it\u2019ll be like playing with a tassel"
+  - "While I\u2019m winning the prize, you won\u2019t be able to watch me with your
+    eyes"
+  - "You should hit the gym, that\u2019s if you want any chance to win"
+  - "Next time, I won\u2019t be playing fair"
+  - "Here\u2019s one more coming at ya. Ya won\u2019t last much longa"
+  RexTaunts:
+  - This one's for the fans
+  - I'll unmask you right here
+  - That's why the people love me
+  - This is the fun part
+  BlockNessTaunts:
+  - Let's see if you can break my form
+  - You should try training in the mountains
+  - They would love you back home
+  - That's how we do it up north
 --- !u!4 &237450172
 Transform:
   m_ObjectHideFlags: 0
