@@ -52,6 +52,11 @@ public class Battle : MonoBehaviour
     public Image BlockNessImage;
     public Image VinnieImage;
 
+    [Header("Attack sounds")]
+    public AudioClip HitSound;
+    public AudioClip BlockSound;
+    public AudioClip GrabSound;
+
     private GlobalGameManager manager;
 
 
@@ -110,6 +115,8 @@ public class Battle : MonoBehaviour
                     case DamageType.Block:
                         NextPlayerCard.ApplyEffect(Player.Player);
                         player.GetComponent<Animation>().Play();
+                        PlayerHealthBar.GetComponent<AudioSource>().clip = BlockSound;
+                        PlayerHealthBar.GetComponent<AudioSource>().Play();
                         break;
                     case DamageType.Grab:
                         NextEnemyCard.ApplyEffect(Player.Enemy);
@@ -117,6 +124,8 @@ public class Battle : MonoBehaviour
                         {
                             enemy.GetComponent<Animation>().Play();
                         }
+                        EnemyHealthBar.GetComponent<AudioSource>().clip = GrabSound;
+                        EnemyHealthBar.GetComponent<AudioSource>().Play();
                         break;
                 }
                 break;
@@ -129,6 +138,8 @@ public class Battle : MonoBehaviour
                         {
                             enemy.GetComponent<Animation>().Play();
                         }
+                        EnemyHealthBar.GetComponent<AudioSource>().clip = HitSound;
+                        EnemyHealthBar.GetComponent<AudioSource>().Play();
                         break;
                     case DamageType.Block:
                         //no winner
@@ -136,6 +147,8 @@ public class Battle : MonoBehaviour
                     case DamageType.Grab:
                         NextPlayerCard.ApplyEffect(Player.Player);
                         player.GetComponent<Animation>().Play();
+                        PlayerHealthBar.GetComponent<AudioSource>().clip = GrabSound;
+                        PlayerHealthBar.GetComponent<AudioSource>().Play();
                         break;
                 }
                 break;
@@ -145,13 +158,17 @@ public class Battle : MonoBehaviour
                     case DamageType.Hit:
                         NextPlayerCard.ApplyEffect(Player.Player);
                         player.GetComponent<Animation>().Play();
+                        PlayerHealthBar.GetComponent<AudioSource>().clip = HitSound;
+                        PlayerHealthBar.GetComponent<AudioSource>().Play();
                         break;
                     case DamageType.Block:
                         NextEnemyCard.ApplyEffect(Player.Enemy);
                         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
                         {
                             enemy.GetComponent<Animation>().Play();
-                        } 
+                        }
+                        EnemyHealthBar.GetComponent<AudioSource>().clip = BlockSound;
+                        EnemyHealthBar.GetComponent<AudioSource>().Play();
                         break;
                     case DamageType.Grab:
                         //no winner
