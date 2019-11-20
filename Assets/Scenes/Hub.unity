@@ -253,8 +253,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Shop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6c1b5ece10a7d64ca5b180e140a918d, type: 2}
+  m_sharedMaterial: {fileID: 21034942993481136, guid: c6c1b5ece10a7d64ca5b180e140a918d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -388,7 +389,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -317, y: 183}
-  m_SizeDelta: {x: 279.8, y: 466.4}
+  m_SizeDelta: {x: 283.75, y: 466.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649409117
 MonoBehaviour:
@@ -517,7 +518,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 327, y: 182.99998}
-  m_SizeDelta: {x: 279.8, y: 466.4}
+  m_SizeDelta: {x: 283.75, y: 466.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874921702
 MonoBehaviour:
@@ -814,8 +815,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6c1b5ece10a7d64ca5b180e140a918d, type: 2}
+  m_sharedMaterial: {fileID: 21034942993481136, guid: c6c1b5ece10a7d64ca5b180e140a918d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

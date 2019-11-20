@@ -22,13 +22,16 @@ public class ShopCard : MonoBehaviour
         switch (CardStorage.damageType)
         {
             case DamageType.Hit:
-                ScissorsImage.gameObject.SetActive(true);
+                // ScissorsImage.gameObject.SetActive(true);
+                GetComponent<Button>().image.sprite = ScissorsImage.sprite;
                 break;
             case DamageType.Block:
-                RockImage.gameObject.SetActive(true);
+                //RockImage.gameObject.SetActive(true);
+                GetComponent<Button>().image.sprite = RockImage.sprite;
                 break;
             case DamageType.Grab:
-                PaperImage.gameObject.SetActive(true);
+                //PaperImage.gameObject.SetActive(true);
+                GetComponent<Button>().image.sprite = PaperImage.sprite;
                 break;
         }
 
