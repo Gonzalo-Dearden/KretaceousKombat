@@ -44,6 +44,7 @@ public class ShopCard : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().GlobalHand.Add(CardStorage);
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalGameManager>().money -= CardStorage.MonetaryValue;
             gameObject.GetComponent<Button>().interactable = false;
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<AudioSource>().Play();
         }
     }
 }
