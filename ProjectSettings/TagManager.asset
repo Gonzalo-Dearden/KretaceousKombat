@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BattleManager
   - CardManager
+  - Enemy
   layers:
   - Default
   - TransparentFX

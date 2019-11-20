@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class Battle : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject player;
 
     [Header("Health bars")]
     public Slider PlayerHealthBar;
@@ -108,9 +109,14 @@ public class Battle : MonoBehaviour
                         break;
                     case DamageType.Block:
                         NextPlayerCard.ApplyEffect(Player.Player);
+                        player.GetComponent<Animation>().Play();
                         break;
                     case DamageType.Grab:
                         NextEnemyCard.ApplyEffect(Player.Enemy);
+                        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+                        {
+                            enemy.GetComponent<Animation>().Play();
+                        }
                         break;
                 }
                 break;
@@ -119,12 +125,17 @@ public class Battle : MonoBehaviour
                 {
                     case DamageType.Hit:
                         NextEnemyCard.ApplyEffect(Player.Enemy);
+                        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+                        {
+                            enemy.GetComponent<Animation>().Play();
+                        }
                         break;
                     case DamageType.Block:
                         //no winner
                         break;
                     case DamageType.Grab:
                         NextPlayerCard.ApplyEffect(Player.Player);
+                        player.GetComponent<Animation>().Play();
                         break;
                 }
                 break;
@@ -133,9 +144,14 @@ public class Battle : MonoBehaviour
                 {
                     case DamageType.Hit:
                         NextPlayerCard.ApplyEffect(Player.Player);
+                        player.GetComponent<Animation>().Play();
                         break;
                     case DamageType.Block:
                         NextEnemyCard.ApplyEffect(Player.Enemy);
+                        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+                        {
+                            enemy.GetComponent<Animation>().Play();
+                        } 
                         break;
                     case DamageType.Grab:
                         //no winner

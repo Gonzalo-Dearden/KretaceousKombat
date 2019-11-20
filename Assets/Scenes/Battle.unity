@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 329829674}
   - component: {fileID: 329829676}
   - component: {fileID: 329829675}
+  - component: {fileID: 329829677}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -855,6 +856,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329829673}
   m_CullTransparentMesh: 0
+--- !u!111 &329829677
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329829673}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 322a3c7592647634db7080da9c3ba417, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 322a3c7592647634db7080da9c3ba417, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &382787842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  player: {fileID: 329829673}
   PlayerHealthBar: {fileID: 600757742}
   EnemyHealthBar: {fileID: 416064169}
   PlayerHealth: 0
@@ -1548,9 +1566,10 @@ GameObject:
   - component: {fileID: 755827124}
   - component: {fileID: 755827126}
   - component: {fileID: 755827125}
+  - component: {fileID: 755827127}
   m_Layer: 5
   m_Name: VinnieEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1611,6 +1630,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755827123}
   m_CullTransparentMesh: 0
+--- !u!111 &755827127
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755827123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &776364367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,9 +1657,10 @@ GameObject:
   - component: {fileID: 776364368}
   - component: {fileID: 776364370}
   - component: {fileID: 776364369}
+  - component: {fileID: 776364371}
   m_Layer: 5
   m_Name: RexEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1685,6 +1721,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776364367}
   m_CullTransparentMesh: 0
+--- !u!111 &776364371
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776364367}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &797989376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,9 +2278,10 @@ GameObject:
   - component: {fileID: 1228618155}
   - component: {fileID: 1228618157}
   - component: {fileID: 1228618156}
+  - component: {fileID: 1228618158}
   m_Layer: 5
   m_Name: BlockNessEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2289,6 +2342,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228618154}
   m_CullTransparentMesh: 0
+--- !u!111 &1228618158
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228618154}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3769ce62eae7c114383297a4e46c7379, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1254554531
 GameObject:
   m_ObjectHideFlags: 0
