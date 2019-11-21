@@ -16,7 +16,7 @@ public class ShopCard : MonoBehaviour
     public void SetCard(Card card)
     {
         CardStorage = card;
-        gameObject.GetComponentInChildren<TextMeshProUGUI>().text = CardStorage.Title + "\n" + CardStorage.Description + "\n" + CardStorage.MonetaryValue + " gold";
+        gameObject.GetComponentInChildren<TextMeshProUGUI>().text = CardStorage.Title + "\n" + CardStorage.Description;
         gameObject.GetComponent<Button>().onClick.AddListener(Buy);
 
         switch (CardStorage.damageType)

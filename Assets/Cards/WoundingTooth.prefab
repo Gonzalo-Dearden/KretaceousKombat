@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 0
-  Description: Deals double damage if successful, take double damage if fail
+  Description: Doubles damage given and taken
   Title: Wounding Tooth
   DisplayImage: {fileID: 0}
   MonetaryValue: 10

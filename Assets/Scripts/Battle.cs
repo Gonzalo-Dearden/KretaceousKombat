@@ -45,7 +45,7 @@ public class Battle : MonoBehaviour
 
     [Header("Boss Taunts")]
     public int TauntLength;
-    public TextMeshProUGUI tauntText;
+    public GameObject tauntGO;
 
     [Header("Boss Images")]
     public Image RexImage;
@@ -249,10 +249,10 @@ public class Battle : MonoBehaviour
 
     IEnumerator ShowTaunt(string Taunt)
     {
-        tauntText.text = Taunt;
-        tauntText.gameObject.SetActive(true);
+        tauntGO.GetComponentInChildren<TextMeshProUGUI>().text = Taunt;
+        tauntGO.gameObject.SetActive(true);
         yield return new WaitForSeconds(TauntLength);
-        tauntText.gameObject.SetActive(false);
+        tauntGO.gameObject.SetActive(false);
     }
 }
 

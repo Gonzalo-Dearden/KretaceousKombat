@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour
         //work out what bosses have been beaten by comparing the boss order from the global manager with the current boss level
         int currentLevel = manager.CurrentBoss;
         List<Bosses> BossOrder = manager.BossOrder;
-        List<Bosses> BeatenBosses = BossOrder.GetRange(0, currentLevel + 1);
+        List<Bosses> BeatenBosses = BossOrder.GetRange(0, currentLevel);
 
         List<Card> PossibleCards = new List<Card>();
 
@@ -48,6 +48,8 @@ public class ShopManager : MonoBehaviour
                     break;
             }
         }
+
+        PossibleCards.AddRange(manager.GlobalHand);
 
         //shuffle the cards
         for (int i = 0; i < PossibleCards.Count; i++)
@@ -74,6 +76,6 @@ public class ShopManager : MonoBehaviour
 
     public void Update()
     {
-        MoneyText.text = "Money: " + manager.money + " gold";
+        MoneyText.text = "Money: " + manager.money + " gold\nEverything 10 Gold";
     }
 }
